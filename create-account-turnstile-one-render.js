@@ -9,10 +9,10 @@
 // 1 FUNCTION
 //
 // SEQUENCE:
-// #2
+// TWO
 //
 // JOB:
-// Render Turnstile #1
+// Render Turnstile One
 // after its plaque is touch-active.
 //
 // FUNCTION:
@@ -22,7 +22,7 @@
 // cybercrowd:turnstile-one-touch-active
 //
 // TARGET:
-// #turnstile-one
+// turnstile-one
 //
 // OUTPUT:
 // cybercrowd:turnstile-one-token-produced
@@ -54,30 +54,39 @@ export function installTurnstileOneRender() {
         return;
       }
 
-      if (!window.turnstile) {
-        return;
-      }
-
-      window.turnstile.render(
-        "#turnstile-one",
-        {
-          sitekey:
-            "0x4AAAAAACvkecVo2F3hpb1r",
-
-          callback(token) {
-            window.dispatchEvent(
-              new CustomEvent(
-                "cybercrowd:turnstile-one-token-produced",
-                {
-                  detail: {
-                    token
-                  }
-                }
-              )
+      const render =
+        () => {
+          if (!window.turnstile) {
+            window.requestAnimationFrame(
+              render
             );
+
+            return;
           }
-        }
-      );
+
+          window.turnstile.render(
+            slot,
+            {
+              sitekey:
+                "0x4AAAAAACvkecVo2F3hpb1r",
+
+              callback(token) {
+                window.dispatchEvent(
+                  new CustomEvent(
+                    "cybercrowd:turnstile-one-token-produced",
+                    {
+                      detail: {
+                        token
+                      }
+                    }
+                  )
+                );
+              }
+            }
+          );
+        };
+
+      render();
     },
     { once: true }
   );
