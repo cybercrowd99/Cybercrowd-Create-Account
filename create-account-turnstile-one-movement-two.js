@@ -9,11 +9,11 @@
 // 1 FUNCTION
 //
 // SEQUENCE:
-// #2
+// TWO
 //
 // JOB:
-// Perform Movement #2
-// after Turnstile #1 human verification passes.
+// Perform Movement Two
+// after Turnstile One human verification passes.
 //
 // FUNCTION:
 // installTurnstileOneMovementTwo()
