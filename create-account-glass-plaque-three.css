@@ -13,47 +13,51 @@ SEQUENCE:
 #3
 
 JOB:
-Present the Sequence #3 glass face
-on the existing Create Account rail.
+Own the visible glass presentation
+of the Sequence #3 plaque node.
 
 FUNCTION:
-Style .glass-plaque-three only.
+Render .glass-plaque-three
+as the Sequence #3 glass organism.
 
-HUMAN ACTION:
-Sequence #3 exists only after
-cybercrowd:face-two-arrived.
-
-When this glass exists,
-its ENTER EMAIL and SEND controls
-must be able to receive human touch.
+OWNS:
+Plaque dimensions.
+Plaque border.
+Plaque radius.
+Plaque glass background.
+Plaque blur.
+Plaque reflection.
+Plaque shadow.
+Plaque physical presentation boundary.
 
 DOES NOT OWN:
+Stage.
+Backdrop.
+HTML.
+Plaque node creation.
 Email entry.
 Email input.
 Send button.
 Turnstile.
 Verification.
+Movement.
+Rotation.
 Audio.
 WHOOSH.
 Authentication.
 Session.
 Routing.
+Runtime logic.
 */
 
 .glass-plaque-three {
   position: relative;
-
-  grid-area: 1 / 1;
-
   display: block;
 
   width: min(88vw, 520px);
   height: min(72vh, 620px);
 
-  border:
-    2px solid
-    rgba(214, 242, 232, 0.78);
-
+  border: 2px solid rgba(214, 242, 232, 0.78);
   border-radius: 24px;
 
   background:
@@ -74,50 +78,6 @@ Routing.
 
   box-shadow:
     0 26px 70px rgba(0, 0, 0, 0.34),
-    inset 0 0 0 1px
-      rgba(255, 255, 255, 0.52),
-    inset 0 0 30px
-      rgba(255, 255, 255, 0.18);
-
-  transform-origin:
-    50%
-    50%
-    calc(-1 * var(--cylinder-depth));
-
-  transform-style: preserve-3d;
-
-  backface-visibility: visible;
-  -webkit-backface-visibility: visible;
-
-  transform:
-    translateY(-2px)
-    rotateX(2deg)
-    rotateY(
-      calc(
-        var(--cylinder-angle) -
-        3.141592653589793rad
-      )
-    );
-
-  transition:
-    transform
-    90ms
-    linear;
-
-  will-change: transform;
-
-  pointer-events: auto;
+    inset 0 0 0 1px rgba(255, 255, 255, 0.52),
+    inset 0 0 30px rgba(255, 255, 255, 0.18);
 }
-
-@media (min-width: 769px) {
-  .glass-plaque-three {
-    transform-origin:
-      50%
-      50%;
-
-    transform:
-      translateY(-2px)
-      rotateX(0deg)
-      rotateY(0deg);
-  }
-}t
