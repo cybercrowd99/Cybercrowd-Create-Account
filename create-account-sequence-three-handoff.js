@@ -3,81 +3,52 @@
 // FILE:
 // create-account-sequence-three-handoff.js
 //
-// BUILD LAW:
-// 1 FILE
-// 1 JOB
-// 1 FUNCTION
+// ONE ROCK
+// ONE OBJECT
+// ONE MOVEMENT
+// ONE FUNCTION
+// ONE ENTRANCE
+// ONE ACTUAL END
+// CLOSED
 //
-// JOB:
-// Detect Sequence #3 glass arrival
-// and publish one Sequence #3 ready signal.
+// OBJECT:
+// glass-plaque-three arrival
 //
-// FUNCTION:
-// installSequenceThreeHandoff()
+// ENTRANCE:
+// DOM mutation
 //
-// INPUT:
-// .glass-plaque-three arrives
+// MOVEMENT:
+// Detect glass-plaque-three arrival.
 //
-// OUTPUT:
+// EXIT:
 // cybercrowd:sequence-three-ready
 //
-// DOES NOT OWN:
-// Sequence #2.
-// Movement.
-// Email input.
-// Email focus.
-// SEND.
-// Turnstile #2.
-// Verification.
-// Audio.
-// Authentication.
-// Session.
-// Routing.
-// Backend authority.
+// ACTUAL END:
+// Observer disconnects.
+// Gate closes.
 
-export function installSequenceThreeHandoff() {
-  const existingPlaque =
-    document.querySelector(
-      ".glass-plaque-three"
-    );
+new MutationObserver(
+  (records, observer) => {
+    if (
+      !document.querySelector(
+        ".glass-plaque-three"
+      )
+    ) {
+      return;
+    }
 
-  if (existingPlaque) {
+    observer.disconnect();
+
     window.dispatchEvent(
       new CustomEvent(
         "cybercrowd:sequence-three-ready"
       )
     );
-
-    return true;
   }
-
-  const observer =
-    new MutationObserver(() => {
-      const plaque =
-        document.querySelector(
-          ".glass-plaque-three"
-        );
-
-      if (!plaque) {
-        return;
-      }
-
-      observer.disconnect();
-
-      window.dispatchEvent(
-        new CustomEvent(
-          "cybercrowd:sequence-three-ready"
-        )
-      );
-    });
-
-  observer.observe(
-    document.documentElement,
-    {
-      childList: true,
-      subtree: true
-    }
-  );
-
-  return true;
-}
+).observe(
+  document.documentElement,
+  {
+    childList: true,
+    subtree: true
+  }
+);
