@@ -3,97 +3,36 @@
 // FILE:
 // create-account-sequence-three-send-action.js
 //
-// BUILD LAW:
-// 1 FILE
-// 1 JOB
-// 1 FUNCTION
-//
-// JOB:
-// Own the Sequence #3
-// human SEND click boundary.
-//
-// FUNCTION:
-// installSequenceThreeSendAction()
-//
-// ARM:
-// cybercrowd:email-opened
+// DOMINO
 //
 // INPUT:
-// human click on #sendButton
+// Human click on sendButton
 //
 // OUTPUT:
 // cybercrowd:turnstile-two-requested
 //
-// LAW:
-// SEND HAS NO CLICK CONNECTION
-// UNTIL ENTER EMAIL HAS OPENED.
+// PAYLOAD:
+// none
 //
-// DOES NOT OWN:
-// Email-input creation.
-// Email focus.
-// Email validity detection.
-// SEND-button creation.
-// SEND-button state.
-// Turnstile #2 rendering.
-// Turnstile #2 token creation.
-// Verification.
-// Movement.
-// Audio.
-// WHOOSH.
-// Authentication.
-// Session.
-// Routing.
-// Backend authority.
+// ACTUAL END:
+// Request emitted.
+// Listener removed.
+// CLOSED.
 
-export function installSequenceThreeSendAction() {
-  let connected =
-    false;
+document.addEventListener(
+  "click",
+  function send(event) {
+    if (event.target?.id !== "sendButton") return;
 
-  let requested =
-    false;
+    document.removeEventListener(
+      "click",
+      send
+    );
 
-  window.addEventListener(
-    "cybercrowd:email-opened",
-    () => {
-      if (connected) {
-        return;
-      }
-
-      const sendButton =
-        document.getElementById(
-          "sendButton"
-        );
-
-      if (!sendButton) {
-        return;
-      }
-
-      connected =
-        true;
-
-      sendButton.addEventListener(
-        "click",
-        () => {
-          if (
-            sendButton.disabled ||
-            requested
-          ) {
-            return;
-          }
-
-          requested =
-            true;
-
-          window.dispatchEvent(
-            new CustomEvent(
-              "cybercrowd:turnstile-two-requested"
-            )
-          );
-        }
-      );
-    },
-    { once: true }
-  );
-
-  return true;
-}
+    window.dispatchEvent(
+      new CustomEvent(
+        "cybercrowd:turnstile-two-requested"
+      )
+    );
+  }
+);
