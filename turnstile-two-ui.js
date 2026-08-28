@@ -21,18 +21,21 @@
 // DOM POINT:
 // #turnstile-two
 //
-// OUTPUT:
-// cybercrowd:turnstile-two-passed
+// INPUT:
+// emitTurnstileTwoPassed
 //
 // BOUNDARY:
 //
+// #turnstile-two
+// ↓
 // Turnstile #2
 // ↓
 // real browser token
 // ↓
-// cybercrowd:turnstile-two-passed
+// emitTurnstileTwoPassed
 //
 // DOES NOT OWN:
+// DOM construction.
 // Turnstile #1.
 // #turnstile-one.
 // cybercrowd:human-passed.
@@ -49,13 +52,17 @@
 // KV.
 // Backend authority.
 
+import {
+  emitTurnstileTwoPassed
+} from "./turnstile-two-passed.js";
+
 export function openTurnstileTwo() {
-  const plaque =
-    document.querySelector(
-      ".glass-plaque-three"
+  const slot =
+    document.getElementById(
+      "turnstile-two"
     );
 
-  if (!plaque) {
+  if (!slot) {
     return false;
   }
 
@@ -67,43 +74,14 @@ export function openTurnstileTwo() {
     return false;
   }
 
-  let slot =
-    document.getElementById(
-      "turnstile-two"
-    );
-
-  if (!slot) {
-    slot =
-      document.createElement(
-        "div"
-      );
-
-    slot.id =
-      "turnstile-two";
-
-    plaque.appendChild(
-      slot
-    );
-  }
-
   window.turnstile.render(
-    "#turnstile-two",
+    slot,
     {
       sitekey:
         "0x4AAAAAACvkecVo2F3hpb1r",
 
-      callback(token) {
-        window.dispatchEvent(
-          new CustomEvent(
-            "cybercrowd:turnstile-two-passed",
-            {
-              detail: {
-                token
-              }
-            }
-          )
-        );
-      }
+      callback:
+        emitTurnstileTwoPassed
     }
   );
 
