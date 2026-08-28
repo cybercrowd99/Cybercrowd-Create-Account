@@ -9,41 +9,27 @@
 // 1 FUNCTION
 //
 // JOB:
-// Play Sequence #1
+// Play the existing Sequence #1
 // Surface Closing audio.
 //
 // FUNCTION:
 // playTurnAudio()
 //
-// SOURCE:
-// cybercrowd-net Pages Function
-// ↓
-// private SOUND_EFFECTS R2
-// ↓
-// Surface-closing_1sEffect.mp3
+// INPUT:
+// turnAudio
 //
-// NO OSCILLATOR.
-// NO SYNTHESIS.
-// NO TIMER.
-// NO MOVEMENT OWNERSHIP.
+// DOES NOT OWN:
+// Audio construction.
+// Audio source definition.
+// Audio configuration.
+// Oscillator.
+// Synthesis.
+// Timer.
+// Movement.
 
-const turnAudio =
-  new Audio(
-    "/api/r2-sound-effect"
-  );
-
-turnAudio.preload =
-  "auto";
-
-turnAudio.setAttribute(
-  "playsinline",
-  ""
-);
-
-turnAudio.setAttribute(
-  "webkit-playsinline",
-  ""
-);
+import {
+  turnAudio
+} from "./create-account-turn-audio-source.js";
 
 export async function playTurnAudio() {
   try {
@@ -53,21 +39,12 @@ export async function playTurnAudio() {
     turnAudio.volume =
       1;
 
-    if (
-      turnAudio.readyState === 0
-    ) {
-      turnAudio.load();
-    }
-
-    try {
-      turnAudio.currentTime =
-        0;
-    } catch (_) {}
+    turnAudio.currentTime =
+      0;
 
     await turnAudio.play();
 
     return true;
-
   } catch (error) {
     console.error(
       "CyberCrowd Sequence #1 audio failed:",
