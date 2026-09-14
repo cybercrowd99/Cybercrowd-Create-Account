@@ -1,0 +1,11 @@
+{
+  "name": "create-account-cybercrowd-entry",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "4.131.1"
+  }
+}
