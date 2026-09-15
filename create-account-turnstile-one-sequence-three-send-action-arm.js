@@ -3,14 +3,14 @@
 // FILE:
 // create-account-turnstile-one-sequence-three-send-action-arm.js
 //
-// BUILD LAW:
+// BUILD LAW: 
 // 1 FILE
 // 1 JOB
 // 1 FUNCTION
 //
 // JOB:
-// Arm the Sequence #3 SEND-action boundary
-// when Turnstile #1 opens.
+// Arm the Sequence 3 SEND-action boundary
+// when Turnstile 1 opens.
 //
 // FUNCTION:
 // installTurnstileOneSequenceThreeSendActionArm()
@@ -28,8 +28,8 @@
 // SEND-button creation.
 // SEND-button state.
 // SEND click execution.
-// Turnstile #2 rendering.
-// Turnstile #2 token creation.
+// Turnstile 2 rendering.
+// Turnstile 2 token creation.
 // Verification.
 // Movement.
 // Audio.
