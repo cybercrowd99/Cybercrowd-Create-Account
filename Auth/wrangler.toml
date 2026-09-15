@@ -1,0 +1,51 @@
+name = "cybercrowd-auth"
+main = "src/router.ts"
+compatibility_date = "2026-05-01"
+compatibility_flags = ["nodejs_compat"]
+
+workers_dev = false
+preview_urls = false
+
+[observability]
+enabled = true
+head_sampling_rate = 1
+
+[[kv_namespaces]]
+binding = "VERIFY_KV"
+id = "62a6c667bfc94d43aaf6936bc2502750"
+
+[[kv_namespaces]]
+binding = "IDENTITY"
+id = "fe654980fc014402acd73c87ea04aa61"
+
+[[d1_databases]]
+binding = "DB"
+database_id = "ff39e37c-391a-4898-9db5-d2118a141c07"
+
+[[routes]]
+pattern = "cybercrowd.net/api/auth/verify*"
+zone_name = "cybercrowd.net"
+
+[[routes]]
+pattern = "cybercrowd.net/api/auth/human-verify"
+zone_name = "cybercrowd.net"
+
+[[routes]]
+pattern = "cybercrowd.net/api/auth/send-verification"
+zone_name = "cybercrowd.net"
+
+[[routes]]
+pattern = "cybercrowd.net/api/auth/returning-email-match"
+zone_name = "cybercrowd.net"
+
+[[routes]]
+pattern = "cybercrowd.net/api/auth/login"
+zone_name = "cybercrowd.net"
+
+[[migrations]]
+tag = "v1_ephemeral_port_allocator"
+new_classes = ["EphemeralPortAllocatorDurableObject"]
+
+[[migrations]]
+tag = "v2_remove_ephemeral_port_allocator"
+deleted_classes = ["EphemeralPortAllocatorDurableObject"]
