@@ -9,7 +9,7 @@
 // 1 FUNCTION
 //
 // SEQUENCE:
-// #3
+// 3
 //
 // JOB:
 // Convert one mapped successful SEND result
