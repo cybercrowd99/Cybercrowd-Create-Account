@@ -1,7 +1,7 @@
 /*
 CYBERCROWD
 
-FILE: 
+FILE:  
 create-account-glass-plaque-three.css
 
 BUILD LAW:
@@ -10,15 +10,15 @@ BUILD LAW:
 1 FUNCTION
 
 SEQUENCE:
-#3
+3
 
 JOB:
 Own the visible glass presentation
-of the Sequence #3 plaque node.
+of the Sequence 3 plaque node.
 
 FUNCTION:
 Render .glass-plaque-three
-as the Sequence #3 glass organism.
+as the Sequence 3 glass organism.
 
 OWNS:
 Plaque dimensions.
