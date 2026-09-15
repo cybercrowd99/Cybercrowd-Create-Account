@@ -1,6 +1,6 @@
 // CYBERCROWD
 //
-// FILE:
+// FILE: 
 // entry-send-result.js
 //
 // BUILD LAW:
