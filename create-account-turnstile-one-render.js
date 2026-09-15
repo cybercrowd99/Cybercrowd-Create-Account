@@ -3,7 +3,7 @@
 // FILE:
 // create-account-turnstile-one-render.js
 //
-// BUILD LAW:
+// BUILD LAW: 
 // 1 FILE
 // 1 JOB
 // 1 FUNCTION
