@@ -3,14 +3,14 @@
 // FILE:
 // create-account-turnstile-one-release-arm.js
 //
-// BUILD LAW:
+// BUILD LAW: 
 // 1 FILE
 // 1 JOB
 // 1 FUNCTION
 //
 // JOB:
-// Arm Sequence #2 release
-// when Turnstile #1 opens.
+// Arm Sequence 2 release
+// when Turnstile 1 opens.
 //
 // FUNCTION:
 // installTurnstileOneReleaseArm()
@@ -25,8 +25,8 @@
 // Turnstile rendering.
 // Turnstile token creation.
 // Human verification.
-// Movement #2.
-// Sequence #2 release execution.
+// Movement 2.
+// Sequence 2 release execution.
 // Audio.
 // Email.
 // SEND.
