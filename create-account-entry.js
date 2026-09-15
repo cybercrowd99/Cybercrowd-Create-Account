@@ -1,6 +1,6 @@
 // CYBERCROWD
 //
-// FILE: 
+// FILE:
 // create-account-entry.js
 //
 // BUILD LAW:
