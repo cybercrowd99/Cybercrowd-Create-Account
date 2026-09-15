@@ -7,3 +7,4 @@ workers_dev = true
 [[services]]
 binding = "CORE_SERVICE"
 service = "cybercrowd-core"
+
