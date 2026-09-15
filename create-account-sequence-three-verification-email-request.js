@@ -1,6 +1,6 @@
 // CYBERCROWD
 //
-// FILE:
+// FILE: 
 // create-account-sequence-three-verification-email-request.js
 //
 // BUILD LAW:
@@ -9,7 +9,7 @@
 // 1 FUNCTION
 //
 // SEQUENCE:
-// #3
+// 3
 //
 // JOB:
 // Carry one SEND-ready email + token
