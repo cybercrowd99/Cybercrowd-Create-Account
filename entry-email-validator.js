@@ -1,6 +1,6 @@
 // CYBERCROWD
 //
-// FILE:
+// FILE: 
 // entry-email-validator.js
 //
 // BUILD LAW:
