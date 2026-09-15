@@ -1,4 +1,4 @@
-// CYBERCROWD
+// CYBERCROWD 
 //
 // FILE: human-verify-client.js
 //
