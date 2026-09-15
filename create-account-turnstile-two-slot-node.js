@@ -9,11 +9,11 @@
 // 1 FUNCTION
 //
 // SEQUENCE:
-// #3
+// 3
 //
 // JOB:
-// Create the Turnstile #2 slot
-// inside the existing Sequence #3 plaque.
+// Create the Turnstile 2 slot
+// inside the existing Sequence 3 plaque.
 //
 // FUNCTION:
 // installTurnstileTwoSlotNode()
@@ -31,9 +31,9 @@
 // cybercrowd:turnstile-two-slot-ready
 //
 // DOES NOT OWN:
-// Sequence #1.
-// Sequence #2.
-// Sequence #3 creation.
+// Sequence 1.
+// Sequence 2.
+// Sequence 3 creation.
 // Email.
 // SEND click.
 // Plaque creation.
