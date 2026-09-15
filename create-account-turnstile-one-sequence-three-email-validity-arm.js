@@ -3,14 +3,14 @@
 // FILE:
 // create-account-turnstile-one-sequence-three-email-validity-arm.js
 //
-// BUILD LAW:
+// BUILD LAW: 
 // 1 FILE
 // 1 JOB
 // 1 FUNCTION
 //
 // JOB:
-// Arm the Sequence #3 email-validity detector
-// when Turnstile #1 opens.
+// Arm the Sequence 3 email-validity detector
+// when Turnstile 1 opens.
 //
 // FUNCTION:
 // installTurnstileOneSequenceThreeEmailValidityArm()
@@ -29,7 +29,7 @@
 // SEND-button creation.
 // SEND-button state.
 // SEND click behavior.
-// Turnstile #2.
+// Turnstile 2.
 // Verification.
 // Movement.
 // Audio.
