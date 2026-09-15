@@ -1,7 +1,7 @@
 /**
  * CyberCrowd-Core — Create Account → CORE Binding V1
  * 
- * BUILD LAW:
+ * BUILD LAW: 
  * 1 FILE
  * 1 JOB
  * 1 FUNCTION
