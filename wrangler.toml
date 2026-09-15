@@ -1,44 +1,9 @@
-name = "cybercrowd-net"
+name = "cybercrowd-create-account"
 main = "worker.js"
-compatibility_date = "2026-05-09"
+compatibility_date = "2026-08-04"
 
 workers_dev = true
-
-[assets]
-directory = "./"
-binding = "ASSETS"
-run_worker_first = true
-html_handling = "auto-trailing-slash"
-not_found_handling = "404-page"
-
-[observability.logs]
-enabled = true
-
-[[r2_buckets]]
-binding = "TEASER_BUCKET"
-bucket_name = "cybercrowd-teasers"
-
-[[kv_namespaces]]
-binding = "IDENTITY"
-id = "fe654980fc014402acd73c87ea04aa61"
-
-[[kv_namespaces]]
-binding = "SIGNUP_RATE_LIMIT"
-id = "c11f2d19270443728b757b602a71c7e4"
-
-[[kv_namespaces]]
-binding = "USERS"
-id = "211ec37065aa46269485c90c2eb8936e"
-
-[[kv_namespaces]]
-binding = "ALLOCATOR_DB"
-id = "fe654980fc014402acd73c87ea04aa61"
 
 [[services]]
 binding = "CORE_SERVICE"
 service = "cybercrowd-core"
-
-[vars]
-PORT_MIN = "49152"
-PORT_MAX = "65535"
-LEASE_TTL_MS = "30000"
