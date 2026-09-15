@@ -49,3 +49,4 @@ new_classes = ["EphemeralPortAllocatorDurableObject"]
 [[migrations]]
 tag = "v2_remove_ephemeral_port_allocator"
 deleted_classes = ["EphemeralPortAllocatorDurableObject"]
+
