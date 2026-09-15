@@ -3,7 +3,7 @@
 // FILE:
 // create-account-sequence-three-send-candidate-validator.js
 //
-// BUILD LAW:
+// BUILD LAW: 
 // 1 FILE
 // 1 JOB
 // 1 FUNCTION
