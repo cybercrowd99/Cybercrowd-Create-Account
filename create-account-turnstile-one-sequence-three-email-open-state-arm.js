@@ -3,14 +3,14 @@
 // FILE:
 // create-account-turnstile-one-sequence-three-email-open-state-arm.js
 //
-// BUILD LAW:
+// BUILD LAW: 
 // 1 FILE
 // 1 JOB
 // 1 FUNCTION
 //
 // JOB:
-// Arm the Sequence #3 email-open-state presenter
-// when Turnstile #1 opens.
+// Arm the Sequence 3 email-open-state presenter
+// when Turnstile 1 opens.
 //
 // FUNCTION:
 // installTurnstileOneSequenceThreeEmailOpenStateArm()
@@ -29,7 +29,7 @@
 // Email validation.
 // Email styling definitions.
 // SEND.
-// Turnstile #2.
+// Turnstile 2.
 // Verification.
 // Movement.
 // Audio.
